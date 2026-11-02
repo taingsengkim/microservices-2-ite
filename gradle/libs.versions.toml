@@ -3,10 +3,17 @@
 java-language-version = "25"
 spring-boot-gradle-plugin = "4.1.1"
 dependency-management-plugin = "1.1.7"
+spring-doc-openapi= "3.2.0"
 
 [libraries]
 spring-boot-gradle-plugin = {module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring-boot-gradle-plugin"}
 dependency-management-plugin = {module = "io.spring.gradle:dependency-management-plugin", version.ref = "dependency-management-plugin"}
+#implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.2.0'
+springdoc-openapi-starter-webmvc-ui = {module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref="spring-doc-openapi"}
+
+order-application-service={module="kh.edu.istad:order-application-service"}
+order-domain-core = {module="kh.edu.istad:order-domain-core"}
+
 
 [bundles]
 gradle-dependency-management = [
@@ -15,4 +22,4 @@ gradle-dependency-management = [
 ]
 
 [plugins]
-java-common-convetion = {id = "java-common-convention"}
+java-common-convention = {id = "java-common-conventions"}

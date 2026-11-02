@@ -6,8 +6,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 
 @EnableConfigurationProperties
-@EnableR2dbcRepositories(basePackages = "kh.edu.istad.platform.order.persistence")
-@SpringBootApplication(scanBasePackages = "kh.edu.istad.platform.order.persistence")
+@EnableR2dbcRepositories(basePackages = "kh.edu.istad.platform")
+@SpringBootApplication(scanBasePackages = "kh.edu.istad.platform")
 public class OrderApplicationService {
 
     static void main(String[] args) {

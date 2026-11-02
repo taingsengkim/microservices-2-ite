@@ -14,4 +14,6 @@ dependencies {
     implementation 'kh.edu.istad:customer-service-restapi'
 
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+
+    implementation libs.springdoc.openapi.starter.webmvc.ui
 }

@@ -1,10 +1,14 @@
 package kh.edu.istad.platform.customer.domain.usecase;
 
+import kh.edu.istad.common.domain.valueobject.CustomerId;
 import kh.edu.istad.platform.customer.domain.entity.Customer;
 import kh.edu.istad.platform.customer.domain.port.out.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -21,4 +25,7 @@ public class QueryCustomerUseCase {
     }
 
 
+    public Mono<Customer> findByid(UUID id) {
+        return customerRepository.findById(new CustomerId(id));
+    }
 }

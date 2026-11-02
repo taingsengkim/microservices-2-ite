@@ -1,5 +1,6 @@
 package kh.edu.istad.platform.customer.restapi.controller;
 
+import kh.edu.istad.common.domain.exception.DomainException;
 import kh.edu.istad.common.domain.valueobject.Money;
 import kh.edu.istad.platform.customer.domain.dto.InitiateCustomerResult;
 import kh.edu.istad.platform.customer.domain.entity.Customer;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/customers")
@@ -28,7 +31,14 @@ public class CustomerController {
 
     @GetMapping
     public Flux<Customer> findAll(){
-        return queryCustomerUseCase.findAll();
+        throw new DomainException("Menghor GOOD Boy");
+//        return queryCustomerUseCase.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Mono<Customer> findById(@PathVariable UUID id){
+//        throw new DomainException("Menghor GOOD Boy");
+        return queryCustomerUseCase.findByid(id);
     }
 
     @GetMapping("/query")

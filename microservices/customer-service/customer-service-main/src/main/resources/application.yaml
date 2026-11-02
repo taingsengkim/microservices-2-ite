@@ -9,7 +9,7 @@ spring:
     consul:
       discovery:
         instance-id: ${spring.application.name}-${random.value}
-
+        prefer-ip-address: true
 
   mongodb:
     host: localhost
