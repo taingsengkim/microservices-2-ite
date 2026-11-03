@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: order-service
@@ -39,3 +40,5 @@ spring:
         read-timeout:
           seconds: 10
         base-url: http://customer-service
+server:
+  port: 9092
