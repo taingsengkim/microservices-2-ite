@@ -1,0 +1,30 @@
+plugins {
+    id 'spring-common-conventions'
+    id 'com.google.protobuf' version '0.9.6'
+}
+
+dependencies {
+    api 'com.google.protobuf:protobuf-java'
+    api 'io.grpc:grpc-protobuf'
+    api 'io.grpc:grpc-stub'
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${dependencyManagement.importedProperties['protobuf-java.version']}"
+    }
+
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${dependencyManagement.importedProperties['grpc-java.version']}"
+        }
+    }
+
+    generateProtoTasks {
+        all().configureEach { task ->
+            task.plugins {
+                grpc {}
+            }
+        }
+    }
+}

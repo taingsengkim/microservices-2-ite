@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package istad.customer.v1;
+
+option java_multiple_files = true;
+option java_package = "kh.edu.istad.common.grpc.customer.v1";
+option java_outer_classname = "CustomerProto";
+
+service CustomerService {
+  rpc GetCustomer (CustomerRequest) returns (CustomerResponse);
+}
+
+message CustomerRequest {
+  string customer_id = 1;
+}
+
+message CustomerResponse {
+  string customer_id = 1;
+  string name = 2;
+  string email = 3;
+}
