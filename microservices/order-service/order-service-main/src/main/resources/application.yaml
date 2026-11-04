@@ -42,3 +42,8 @@ spring:
         base-url: http://customer-service
 server:
   port: 9092
+# Use CUSTOMER_TRANSPORT=http to compare with the existing HTTP client.
+customer:
+  transport: ${CUSTOMER_TRANSPORT:grpc}
+  grpc:
+    target: ${CUSTOMER_GRPC_TARGET:localhost:9093}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package customer.v1;
+option java_package = "kh.edu.istad.platform.grpc.customer.v1";
+option java_multiple_files = true;
+service CustomerService {
+  rpc GetCustomer(GetCustomerRequest) returns (CustomerReply);
+  rpc ListCustomers(ListCustomersRequest) returns (stream CustomerReply);
+}
+message GetCustomerRequest { string id = 1; }
+message ListCustomersRequest {}
+message CustomerReply {
+  string id = 1;
+  string family_name = 2;
+  string given_name = 3;
+}

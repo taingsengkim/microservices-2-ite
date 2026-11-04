@@ -17,3 +17,13 @@ dependencies {
 
     implementation libs.springdoc.openapi.starter.webmvc.ui
 }
+dependencies {
+    implementation 'kh.edu.istad:grpc-contract:1.0.0'
+    implementation platform('io.grpc:grpc-bom:1.83.1')
+    implementation 'io.grpc:grpc-netty-shaded'
+}
+
+dependencies {
+    testImplementation 'io.grpc:grpc-inprocess:1.83.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}

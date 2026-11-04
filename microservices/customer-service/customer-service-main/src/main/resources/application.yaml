@@ -18,3 +18,7 @@ spring:
     database: db_customer
     authentication-database: admin
     password: mongod
+
+customer:
+  grpc:
+    port: ${CUSTOMER_GRPC_PORT:9093}
