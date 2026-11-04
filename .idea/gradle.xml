@@ -12,6 +12,11 @@
                   <project path="$PROJECT_DIR$/build-logic" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/grpc-contract" name="grpc-contract">
+                <projects>
+                  <project path="$PROJECT_DIR$/grpc-contract" />
+                </projects>
+              </build>
               <build path="$PROJECT_DIR$/istad-common" name="istad-common">
                 <projects>
                   <project path="$PROJECT_DIR$/istad-common" />
@@ -67,6 +72,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/build-logic" />
+            <option value="$PROJECT_DIR$/grpc-contract" />
             <option value="$PROJECT_DIR$/istad-common" />
             <option value="$PROJECT_DIR$/istad-common/istad-common-domain" />
             <option value="$PROJECT_DIR$/istad-common/istad-common-restapi" />
